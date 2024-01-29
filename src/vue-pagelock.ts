@@ -5,15 +5,14 @@ const key = Symbol();
 
 export const vPagelock: ObjectDirective<HTMLElement, boolean> = {
     mounted(el, { value }) {
-        if (value) {
-            el[key] || (el[key] = pagelock());
-        }
-        else {
-            clear(el);
-        }
+        handle(el, value);
     },
 
-    unmounted(el) {
+    updated(el, { value }) {
+        handle(el, value);
+    },
+
+    beforeUnmount(el) {
         clear(el);
     }
 }
@@ -27,6 +26,15 @@ export const PagelockPlugin: ObjectPlugin = {
 export {
     pagelock,
     pageunlock
+}
+
+function handle(el: HTMLElement, value: boolean) {
+    if (value) {
+        el[key] || (el[key] = pagelock());
+    }
+    else {
+        clear(el);
+    }
 }
 
 function clear(el) {
