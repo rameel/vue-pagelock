@@ -1,0 +1,45 @@
+{
+  "name": "@ramstack/vue-pagelock",
+  "version": "1.0.0",
+  "description": "A simple utility for managing page scroll locking within Vue applications. No external dependencies.",
+  "type": "module",
+  "main": "dist/vue-pagelock.esm.js",
+  "module": "dist/vue-pagelock.esm.js",
+  "types": "dist/types/vue-pagelock.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "rameel <rameel-b@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "prebuild": "npm run clean",
+    "clean": "rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rameel/vue-pagelock.git"
+  },
+  "keywords": [
+    "pagelock",
+    "page-locking",
+    "scroll-locking",
+    "scroll-lock"
+  ],
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@ramstack/pagelock": "^1.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.6",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "terser": "^5.27.0",
+    "tslib": "^2.6.2"
+  }
+}
