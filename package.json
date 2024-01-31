@@ -1,6 +1,6 @@
 {
   "name": "@ramstack/vue-pagelock",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple utility for managing page scroll locking within Vue applications. No external dependencies.",
   "type": "module",
   "main": "dist/vue-pagelock.esm.js",
