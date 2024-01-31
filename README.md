@@ -6,15 +6,47 @@ Uses [@ramstack/pagelock](https://github.com/rameel/pagelock) under the hood.
 
 ## Installation
 
-### Via NPM
+### Using via NPM
 ```sh
 npm install --save @ramstack/vue-pagelock
 ```
 
-### Via CDN
+### using via CDN
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@ramstack/vue-pagelock@1.0.0/dist/vue-pagelock.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@ramstack/vue-pagelock@1/dist/vue-pagelock.min.js"></script>
+
+<script>
+    const app = Vue.createApp({
+        setup() {
+        }
+    });
+
+    // Register the pagelock plugin
+    app.use(PagelockPlugin);
+
+    app.mount("#app");
+</script>
 ```
+
+### Using the ES module build
+```html
+<script type="module">
+    import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
+    import { PagelockPlugin } from "https://cdn.jsdelivr.net/npm/@ramstack/vue-pagelock@1/dist/vue-pagelock.esm.min.js";
+
+    const app = createApp({
+        setup() {
+        }
+    });
+
+    // Register the pagelock plugin
+    app.use(PagelockPlugin);
+
+    app.mount("#app");
+</script>
+```
+
 
 ## Usage examples
 
