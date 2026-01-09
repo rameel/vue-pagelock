@@ -1,8 +1,9 @@
+import path from "node:path";
+import resolve from "@rollup/plugin-node-resolve";
 import terser from "@rollup/plugin-terser";
 import typescript from '@rollup/plugin-typescript';
-import resolve from "@rollup/plugin-node-resolve";
 
-const terserOptions = {
+const terser_options = {
     output: {
         comments: false
     },
@@ -27,7 +28,7 @@ export default [{
     }, {
         file: "dist/vue-pagelock.esm.min.js",
         format: "esm",
-        plugins: [terser(terserOptions)]
+        plugins: [terser(terser_options)]
     }, {
         name: "window",
         file: "dist/vue-pagelock.js",
@@ -38,10 +39,23 @@ export default [{
         file: "dist/vue-pagelock.min.js",
         format: "iife",
         extend: true,
-        plugins: [terser(terserOptions)]
+        plugins: [terser(terser_options)]
     }],
     plugins: [
         resolve(),
-        typescript()
+        typescript(),
+        trim_ws()
     ]
 }]
+
+function trim_ws() {
+    return {
+        name: "trim_ws",
+        generateBundle(options, bundle) {
+            if (options.file.match(/\.js$/)) {
+                const key = path.basename(options.file);
+                bundle[key].code = bundle[key].code.trim();
+            }
+        }
+    };
+}
