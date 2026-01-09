@@ -1,17 +1,20 @@
-# Vue-Pagelock
+# @ramstack/vue-pagelock
+[![NPM](https://img.shields.io/npm/v/@ramstack/vue-pagelock)](https://www.npmjs.com/package/@ramstack/vue-pagelock)
+[![MIT](https://img.shields.io/github/license/rameel/vue-pagelock)](https://github.com/rameel/vue-pagelock/blob/main/LICENSE)
 
-The `@ramstack/vue-pagelock` represents a simple utility for managing page scroll locking within Vue applications. The library weights less than 1KB, and 500 bytes when gzipped.
+`@ramstack/vue-pagelock` is a lightweight utility for managing page scroll locking in `Vue` applications.
+The library is approximately `1 KiB` in size.
 
 Uses [@ramstack/pagelock](https://github.com/rameel/pagelock) under the hood.
 
 ## Installation
 
-### Using via NPM
+### Using NPM
 ```sh
 npm install --save @ramstack/vue-pagelock
 ```
 
-### using via CDN
+### Using CDN
 ```html
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@ramstack/vue-pagelock@1/dist/vue-pagelock.min.js"></script>
@@ -47,10 +50,9 @@ npm install --save @ramstack/vue-pagelock
 </script>
 ```
 
-
 ## Usage examples
 
-After installation, register the plugin at the application-wide level.
+After installation, register the plugin at the application level.
 
 ```js
 import App from "./App";
@@ -62,8 +64,7 @@ app.use(PagelockPlugin);
 app.mount("#app");
 ```
 
-Or directly import the directive into the desired components.
-
+Alternatively, you can import the directive directly into the components where it is needed.
 ```vue
 <template>
   <button @click="show">Show modal</button>
