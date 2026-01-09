@@ -37,7 +37,7 @@ function handle(el: HTMLElement, value: boolean) {
     }
 }
 
-function clear(el) {
+function clear(el: HTMLElement) {
     el[key]?.();
     el[key] = null;
 }
