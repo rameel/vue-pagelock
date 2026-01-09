@@ -3,9 +3,14 @@
   "version": "1.0.2",
   "description": "A simple utility for managing page scroll locking within Vue applications. No external dependencies.",
   "type": "module",
-  "main": "dist/vue-pagelock.esm.js",
-  "module": "dist/vue-pagelock.esm.js",
-  "types": "dist/types/vue-pagelock.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/vue-pagelock.d.ts",
+        "default": "./dist/vue-pagelock.esm.js"
+      }
+    }
+  },
   "files": [
     "dist",
     "README.md",
