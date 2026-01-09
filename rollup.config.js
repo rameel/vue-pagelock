@@ -1,4 +1,3 @@
-import size from "rollup-plugin-bundle-size";
 import terser from "@rollup/plugin-terser";
 import typescript from '@rollup/plugin-typescript';
 import resolve from "@rollup/plugin-node-resolve";
@@ -43,7 +42,6 @@ export default [{
     }],
     plugins: [
         resolve(),
-        typescript(),
-        size()
+        typescript()
     ]
 }]
